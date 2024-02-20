@@ -1,28 +1,29 @@
 const box = document.querySelector('#box');
-//드래그 동작 유무를 체크합니다. (false = 이동불가 / true = 이동가능)
-let isDragging = false;
+let isDrag = false; // 드래그 상태 변수
+let locX, locY = 0;
 
-document.addEventListener('mouseup',(e)=>{ isDragging = false; });
+// mousedown	마우스를 누르고 있을 때
+box.addEventListener('mousedown', (e) => {
+    isDrag = true;
+    locX = e.offsetX;
+    locY = e.offsetY;
+})
 
-box.addEventListener('mousedown',(e)=>{ isDragging = true; });
+// mouseup	눌렀던 마우스 버튼을 땔 때
+window.addEventListener('mouseup', () => {
+    isDrag = false;
+})
 
-document.addEventListener('mousemove',(e)=> {
+// mousemove 마우스를 움직였을 때
+window.addEventListener('mousemove', (e) => {
+    if (isDrag) {
+        box.innerText = `
+                (${locX}, ${locY})에서 드래그 시작 \n
+                (${e.clientX}, ${e.clientY})에서 드래그 끝.
+                (${e.clientX - locX}, ${e.clientY - locY})로 이동`;
 
-    if(isDragging == true){
-
-        //브라우저 좌표값 계산
-        let mouseX = e.clientX;
-        let mouseY = e.clientY;
-        // //개체 정 중앙 계산
-        let boxWidth = box.offsetWidth/2;
-        let boxHeight = box.offsetHeight/2;
-
-
-        box.style.position = 'absolute';
-        // //클릭했을 때 마우스가 정 중앙에 위치하게끔 지정
-        box.style.left = mouseX - boxWidth + 'px';
-        box.style.top = mouseY - boxHeight + 'px';
-
+        box.style.left = (e.clientX - locX) + 'px';
+        box.style.top = (e.clientY - locY) + 'px';
     }
-});
+})
 
