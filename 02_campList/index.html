@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캠핑장 알림 서비스</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>캠핑장 조회</h1>
+    <section class="divide">
+        <div id="map" style="width:100%;height:600px;"></div>
+        <div class="list-cont">
+            <article id="category">
+                <button id="campsiteBtn">전체</button>
+                <button>일반야영장</button>
+                <button>글램핑</button>
+                <button>카라반</button>
+                <button>자동차야영장</button>
+            </article>
+            <section id="list">
+        
+            </section>
+            <div>
+                <button id="prevBtn">이전</button>
+                <button id="nextBtn">다음</button>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a1ccaaacd45220a7b848156689fdbd8a"></script>
+    <!-- <script type="module" src="./js/map.js"></script> -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

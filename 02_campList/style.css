@@ -1,0 +1,103 @@
+body {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.divide {
+    display: flex;
+    gap: 16px;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-cont {
+    height: 100%;
+    width: 80%;
+
+    #list {
+        width: 100%;
+        height: 600px;
+        overflow-y: scroll;
+        margin: 16px 0;
+        border: 1px solid #d1d1d1;
+        box-sizing: border-box;
+
+        ul {
+            box-sizing: border-box;
+            padding: 16px 12px;
+            margin: 0;
+            border-bottom: 1px solid #e3e3e3;
+            
+            li {
+                list-style: none;
+                cursor: pointer;
+                line-height: 1.5;
+            }
+
+            li:first-child {
+                font-size: 20px;
+                margin-bottom:8px;
+                font-weight: bold;
+            }
+
+            
+        }
+
+        ul:last-child {border-bottom: 0;}
+        ul:hover { 
+            background-color: #eee;
+            li:first-child {
+                color: #2979ff;
+                text-decoration: underline;
+            } 
+        }
+
+        .active {
+
+            background-color: #efefef;
+            li:first-child {
+                color: #2979ff;
+            } 
+
+        }
+    }
+
+}
+
+button {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.category {
+
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+
+    span {
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    .campsite {
+        background-color: #e0f2f1;
+        color: #004d40;
+    }
+
+    .caravan{
+        background-color: #F0F4C3;
+        color: #827717;
+    }
+
+    .glamping{
+        background-color: #FFF3E0;
+        color: #E65100;
+    }
+
+    .carCamp {
+        background-color: #EDE7F6;
+        color: #311B92;
+    }
+}
